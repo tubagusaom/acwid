@@ -49,7 +49,7 @@ class Profil extends MY_Controller {
         $tgl_lahir = format_mysql_date($this->input->post('tgl_lahir'));
         $pendidikan_terakhir = $this->input->post('pendidikan_terakhir');
         $jurusan = $this->input->post('prog_jurusan');
-       
+
         $data = array(
             'nama_lengkap' => $nama,
             'no_identitas' => $no_identitas,
@@ -235,6 +235,98 @@ age' => $this->unread_message, 'menus' => $this->menus, 'rolename' => $this->aut
                 redirect('profil/foto');
             }
         }
+    }
+
+
+
+
+
+    function biodata() {
+
+      $template_header = 'templates/responsive/header';
+      $template_body = 'templates/responsive/profil/biodata';
+      $template_bottom = 'templates/responsive/footer_home';
+
+      $pilihan_pendidikan = array(''=>'Pilih','1'=>'SD'
+      ,'2'=>'SMP'
+      ,'3'=>'SMA/Sederajat'
+      ,'5'=>'D3'
+      ,'6'=>'D4'
+      ,'7'=>'S1'
+      ,'8'=>'S2'
+      ,'9'=>'S3'
+      );
+
+      $biodata = $this->profil_model->biodata($this->id);
+      // var_dump($biodata);die();
+      $this->load->view($template_header, array('aplikasi' => $this->aplikasi, 'query_pesan' => $this->query_pesan, 'query_pesan_unread' => $this->query_pesan_unread));
+      $this->load->view($template_body, array('aplikasi' => $this->aplikasi, 'unread_message' => $this->unread_message, 'menus' => $this->menus, 'rolename' => $this->auth->get_rolename(), 'nama_user' => $this->auth->get_user_data()->nama, 'biodata' => $biodata,'pilihan_pendidikan'=>$pilihan_pendidikan));
+      $this->load->view($template_bottom, array('aplikasi' => $this->aplikasi));
+
+    }
+
+    function edit_biodata() {
+        $nama = $this->input->post('nama');
+        $pekerjaan_1 = $this->input->post('pekerjaan_1');
+        $pekerjaan_2 = $this->input->post('pekerjaan_2');
+        $pekerjaan_3 = $this->input->post('pekerjaan_3');
+        $tempat_lahir = $this->input->post('tempat_lahir');
+        $tgl_lahir = $this->input->post('tgl_lahir');
+        $email = $this->input->post('email');
+        $pendidikan_terakhir = $this->input->post('pendidikan_terakhir');
+        $kampus = $this->input->post('kampus');
+        $gelar = $this->input->post('gelar');
+        $ortu = $this->input->post('ortu');
+        $pasangan = $this->input->post('pasangan');
+
+        $data = array(
+            'nama_lengkap' => $nama,
+            'pekerjaan_1' => $pekerjaan_1,
+            'pekerjaan_2' => $pekerjaan_2,
+            'pekerjaan_3' => $pekerjaan_3,
+            'tempat_lahir' => $tempat_lahir,
+            'tgl_lahir' => $tgl_lahir,
+            'email' => $email,
+            'pendidikan_terakhir' => $pendidikan_terakhir,
+            'kampus' => $kampus,
+            'gelar' => $gelar,
+            'ortu' => $ortu,
+            'pasangan' => $pasangan);
+
+       // var_dump($this->id);die();
+
+        // $this->db->where('id_users', $this->id);
+        if ($this->db->update(kode_lsp().'biodata', $data)) {
+            $this->session->set_flashdata('result', 'Perbaharui biodata berhasil');
+            $this->session->set_flashdata('mode_alert', 'success');
+            redirect('profil/biodata');
+        } else {
+            return false;
+        }
+    }
+
+    function about() {
+
+      $template_header = 'templates/responsive/header';
+      $template_body = 'templates/responsive/profil/about';
+      $template_bottom = 'templates/responsive/footer_home';
+
+      $pilihan_pendidikan = array(''=>'Pilih','1'=>'SD'
+      ,'2'=>'SMP'
+      ,'3'=>'SMA/Sederajat'
+      ,'5'=>'D3'
+      ,'6'=>'D4'
+      ,'7'=>'S1'
+      ,'8'=>'S2'
+      ,'9'=>'S3'
+      );
+
+      $biodata = $this->profil_model->biodata($this->id);
+      //dump($biodata);die();
+      $this->load->view($template_header, array('aplikasi' => $this->aplikasi, 'query_pesan' => $this->query_pesan, 'query_pesan_unread' => $this->query_pesan_unread));
+      $this->load->view($template_body, array('aplikasi' => $this->aplikasi, 'unread_message' => $this->unread_message, 'menus' => $this->menus, 'rolename' => $this->auth->get_rolename(), 'nama_user' => $this->auth->get_user_data()->nama, 'biodata' => $biodata,'pilihan_pendidikan'=>$pilihan_pendidikan));
+      $this->load->view($template_bottom, array('aplikasi' => $this->aplikasi));
+
     }
 
 }

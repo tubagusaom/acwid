@@ -1,8 +1,8 @@
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
   <div class="hero-container" data-aos="fade-in">
-    <h1>Achmad Widjaja</h1>
-    <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
+    <h1><?=$biodata->nama_lengkap ?></h1>
+    <p>I'm <span class="typed" data-typed-items="<?=$biodata->pekerjaan_1 ?> <?= $biodata->pekerjaan_2 == '' ? '' : ','.$biodata->pekerjaan_2 ?> <?= $biodata->pekerjaan_3 == '' ? '' : ','.$biodata->pekerjaan_3 ?>"></span></p>
   </div>
 </section><!-- End Hero -->
 
@@ -15,7 +15,7 @@
 
       <div class="section-title">
         <h2>About</h2>
-        <p>Achmad Widjaja adalah seorang pengusaha yang berasal dari Indonesia.</p>
+        <p><?=$biodata->about_top ?></p>
       </div>
 
       <div class="row">
@@ -23,32 +23,31 @@
           <img src="<?php echo base_url() ?>assets/_tera_byte/img/profile-aw.jpg" class="img-fluid" alt="" style="border-radius:5px;">
         </div>
         <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-          <h3>UI/UX Designer &amp; Web Developer.</h3>
+          <h3><?=$biodata->nama_lengkap ?></h3>
           <p class="fst-italic">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua.
+            <?=$biodata->about_center ?>
           </p>
           <div class="row">
             <div class="col-lg-6">
               <ul>
-                <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>1 May 1995</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>acwid.com</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+123 456 7890</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>New York, USA</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Born :</strong> <span><?=$biodata->tempat_lahir ?>, <?=tgl_indo($biodata->tgl_lahir)?></span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Spouse :</strong> <span><?=$biodata->pasangan ?></span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Parents :</strong> <span><?=$biodata->ortu ?></span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Children :</strong> <span><?=$biodata->jumlah_anak ?></span></li>
+
               </ul>
             </div>
             <div class="col-lg-6">
               <ul>
-                <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>30</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong> <span>ter4.byte@yahoo.com</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Age :</strong> <span><?=$umur ?></span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Education :</strong> <span><?=$pilihan_pendidikan[$biodata->pendidikan_terakhir] ?>, <?=$biodata->kampus ?></span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Degree :</strong> <span><?=$biodata->gelar ?></span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Email :</strong> <span><?=$biodata->email ?></span></li>
               </ul>
             </div>
           </div>
           <p>
-            Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
-            Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque. Aliquid amet quidem ut quaerat cupiditate. Ab et eum qui repellendus omnis culpa magni laudantium dolores.
+            <?=$biodata->about_bottom ?>
           </p>
         </div>
       </div>

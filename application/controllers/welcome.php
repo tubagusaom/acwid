@@ -122,8 +122,27 @@ class Welcome extends MY_Controller {
         if (!$this->auth->is_logged_in()) {
             $data['aplikasi'] = $this->db->get('r_konfigurasi_aplikasi')->row();
             $data['class_active'] = 'home';
-//            $data['aplikasi'] = $this->db->get('r_konfigurasi_aplikasi')->row();
+
+            $data['aplikasi'] = $this->db->get('r_konfigurasi_aplikasi')->row();
+            $data['biodata'] = $this->db->get(kode_lsp().'biodata')->row();
+
+            $data['pilihan_pendidikan'] = array(
+            ''=>'-'
+            ,'1'=>'SD'
+            ,'2'=>'SMP'
+            ,'3'=>'SMA/Sederajat'
+            ,'5'=>'D3'
+            ,'6'=>'D4'
+            ,'7'=>'S1'
+            ,'8'=>'S2'
+            ,'9'=>'S3'
+            );
+
+            $data['umur'] = $this->hitung_umur($data['biodata']->tgl_lahir);
+
 //            $data['class_active'] = 'home';
+
+            // var_dump($umur); die();
 
             $this->load->view('templates/bootstraps/header', $data);
             $this->load->view('templates/bootstraps/body', $data);
@@ -176,7 +195,7 @@ class Welcome extends MY_Controller {
         $idlsp = kode_lsp();
         $data['data_skema'] = $this->welcome_model->data_skema($idlsp);
         $data['data_tuk'] = $this->welcome_model->data_tuk($idlsp);
-        
+
         // $data['data_jadwal'] = $this->welcome_model->data_jadwal();
         // $data['marquee'] = $this->artikel_model->marquee();
 

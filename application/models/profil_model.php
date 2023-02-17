@@ -9,7 +9,7 @@ Class Profil_model extends MY_Model {
     }
     public function biodata($id){
         $this->db->where('id_users',$id);
-        $query = $this->db->get(kode_lsp().'asesi');
+        $query = $this->db->get(kode_lsp().'biodata');
         return $query->row();
     }
     public function pekerjaan($id){

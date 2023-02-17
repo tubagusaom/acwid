@@ -25,14 +25,14 @@
         </a>
         <ul class="sub-menu">
             <li class="nav-item <?= $this->uri->segment(1) == 'profil' && $this->uri->segment(2) == 'index' ? 'active' : '' ?>">
-                <a href="<?= base_url() . 'profil/index' ?>" class="nav-link ">
+                <a href="<?= base_url() . 'profil/biodata' ?>" class="nav-link ">
                     <span class="title">Biodata</span>
 
                 </a>
             </li>
 
             <li class="nav-item <?= $this->uri->segment(1) == 'profil' && $this->uri->segment(2) == 'foto' ? 'active' : '' ?>">
-                <a href="<?= base_url() . 'profil/foto' ?>" class="nav-link ">
+                <a href="<?= base_url() . 'profil/about' ?>" class="nav-link ">
                     <span class="title">About</span>
                 </a>
             </li>

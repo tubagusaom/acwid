@@ -143,7 +143,7 @@
 
             <div class="profile">
               <img src="<?php echo base_url() ?>assets/_tera_byte/img/apple-touch-icon.png" alt="" class="img-fluid rounded-circle">
-              <h1 class="text-light"><a href="<?php echo base_url() ?>">Achmad Widjaja</a></h1>
+              <h1 class="text-light"><a href="<?php echo base_url() ?>"><?=$biodata->nama_lengkap ?></a></h1>
               <div class="social-links mt-3 text-center">
                 <a href="https://www.linkedin.com/in/tera-byte/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
                 <a href="https://www.facebook.com/Rock.Sla.N.ker.RolL" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
