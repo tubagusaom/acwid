@@ -278,6 +278,7 @@ age' => $this->unread_message, 'menus' => $this->menus, 'rolename' => $this->aut
         $gelar = $this->input->post('gelar');
         $ortu = $this->input->post('ortu');
         $pasangan = $this->input->post('pasangan');
+        $jumlah_anak = $this->input->post('jumlah_anak');
 
         $data = array(
             'nama_lengkap' => $nama,
@@ -291,7 +292,8 @@ age' => $this->unread_message, 'menus' => $this->menus, 'rolename' => $this->aut
             'kampus' => $kampus,
             'gelar' => $gelar,
             'ortu' => $ortu,
-            'pasangan' => $pasangan);
+            'pasangan' => $pasangan,
+            'jumlah_anak' => $jumlah_anak);
 
        // var_dump($this->id);die();
 
@@ -330,7 +332,7 @@ age' => $this->unread_message, 'menus' => $this->menus, 'rolename' => $this->aut
     }
 
     function edit_about() {
-      
+
        $about_top = $this->input->post('about_top');
        $about_center = $this->input->post('about_center');
        $about_bottom = $this->input->post('about_bottom');
