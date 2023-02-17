@@ -37,7 +37,7 @@
                 </a>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <a class="dashboard-stat dashboard-stat-v2 red" href="<?= base_url() . 'bukti_pendukung/index' ?>" style="border-radius:3px!important;">
+                <a class="dashboard-stat dashboard-stat-v2 red" href="<?= base_url() . '#' ?>" style="border-radius:3px!important;">
                     <div class="visual">
                         <i class="fa fa-bar-chart-o"></i>
                     </div>
@@ -50,7 +50,7 @@
                     </a>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <a class="dashboard-stat dashboard-stat-v2 green" href="<?= base_url() . 'sertifikasi/view' ?>" style="border-radius:3px!important;">
+                    <a class="dashboard-stat dashboard-stat-v2 green" href="<?= base_url() . '#' ?>" style="border-radius:3px!important;">
                         <div class="visual">
                             <i class="fa fa-shopping-cart"></i>
                         </div>
