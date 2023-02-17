@@ -78,12 +78,12 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label class="control-label col-md-3 text-left">Pekerjaan 3 </label>
                             <div class="col-md-9">
                                 <input type="text" placeholder="Pekerjaan 3" class="form-control" name="pekerjaan_3" value="<?= $biodata->pekerjaan_3 ?>"/>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-group">
                             <label class="control-label col-md-3 text-left">Tempat Lahir <span class="required_span">*</span></label>
@@ -149,7 +149,7 @@
                         <div class="form-group">
                             <label class="control-label col-md-3 text-left">Jumlah Anak <span class="required_span">*</span></label>
                             <div class="col-md-9">
-                                <input name="pasangan" value="<?= $biodata->jumlah_anak ?>" required type="text" class="form-control" placeholder="Jumlah Anak">
+                                <input name="jumlah_anak" value="<?= $biodata->jumlah_anak ?>" required type="text" class="form-control" placeholder="Jumlah Anak">
                             </div>
                         </div>
 
