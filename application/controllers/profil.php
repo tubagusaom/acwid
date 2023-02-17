@@ -297,7 +297,7 @@ age' => $this->unread_message, 'menus' => $this->menus, 'rolename' => $this->aut
 
         // $this->db->where('id_users', $this->id);
         if ($this->db->update(kode_lsp().'biodata', $data)) {
-            $this->session->set_flashdata('result', 'Perbaharui biodata berhasil');
+            $this->session->set_flashdata('result', 'Update biodata success');
             $this->session->set_flashdata('mode_alert', 'success');
             redirect('profil/biodata');
         } else {
@@ -327,6 +327,29 @@ age' => $this->unread_message, 'menus' => $this->menus, 'rolename' => $this->aut
       $this->load->view($template_body, array('aplikasi' => $this->aplikasi, 'unread_message' => $this->unread_message, 'menus' => $this->menus, 'rolename' => $this->auth->get_rolename(), 'nama_user' => $this->auth->get_user_data()->nama, 'biodata' => $biodata,'pilihan_pendidikan'=>$pilihan_pendidikan));
       $this->load->view($template_bottom, array('aplikasi' => $this->aplikasi));
 
+    }
+
+    function edit_about() {
+      
+       $about_top = $this->input->post('about_top');
+       $about_center = $this->input->post('about_center');
+       $about_bottom = $this->input->post('about_bottom');
+
+       $data = array(
+           'about_top' => $about_top,
+           'about_center' => $about_center,
+           'about_bottom' => $about_bottom);
+
+      // var_dump($this->id);die();
+
+        $this->db->where('id_users', $this->id);
+        if ($this->db->update(kode_lsp().'biodata', $data)) {
+            $this->session->set_flashdata('result', 'Update about success');
+            $this->session->set_flashdata('mode_alert', 'success');
+            redirect('profil/about');
+        } else {
+            return false;
+        }
     }
 
 }
