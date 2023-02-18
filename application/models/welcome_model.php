@@ -14,12 +14,13 @@ Class Welcome_model extends MY_Model {
         $query = $this->db->get();
         return $query->result();
     }
+    
     public function data_tuk($idlsp) {
         $this->db->select('*', false);
         $this->db->from($idlsp . 'tuk');
         $query = $this->db->get();
 //        return $query->result();
-        
+
         $dd[''] = 'Pilih TUK';
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
@@ -28,8 +29,8 @@ Class Welcome_model extends MY_Model {
             }
         }
         return $dd;
-        
     }
+
     function get_data_faq(){
         $this->db->from('t_faq');
         $this->db->where('u_status','A');
@@ -74,5 +75,5 @@ Class Welcome_model extends MY_Model {
         $query = $this->db->get_where(kode_lsp().'jadual_asesmen', array('id_tuk' => $id_tuk, 'year(tanggal)' => $tahun_jadwal));
         return $query->result();
     }
-    
+
 }

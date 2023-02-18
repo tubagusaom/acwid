@@ -149,9 +149,7 @@
                 <a href="https://www.facebook.com/Rock.Sla.N.ker.RolL" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
                 <a href="https://twitter.com/Tera_Byte_" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
                 <a href="https://www.instagram.com/tera.bytee/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="https://wa.me/+6281399990707?text=Thank%20you%20for%20contacting%20acwid.com..do%20Whatsapp,%20will%20attend%20you%20shortly%20&#128518;" target="_blank" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
-
-
+                <a href="https://wa.me/+6281399990707?text=Thank%20you%20for%20contacting%20acwid.com..do%20Whatsapp,%20will%20attend%20you%20shortly%20 &#128518;" target="_blank" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
               </div>
             </div>
 
