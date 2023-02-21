@@ -2,7 +2,7 @@
 <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
   <div class="hero-container" data-aos="fade-in">
     <h1><?=$biodata->nama_lengkap ?></h1>
-    <p>I'm <span class="typed" data-typed-items="<?=$biodata->pekerjaan_1 ?> <?= $biodata->pekerjaan_2 == '' ? '' : ','.$biodata->pekerjaan_2 ?> <?= $biodata->pekerjaan_3 == '' ? '' : ','.$biodata->pekerjaan_3 ?>"></span></p>
+    <p>I'm <span class="typed" data-typed-items="<?=$biodata->pekerjaan_1 ?> <?= $biodata->pekerjaan_2 == '' ? '' : ','.$biodata->pekerjaan_2 ?> <?= $biodata->pekerjaan_3 == '' OR $biodata->pekerjaan_3 == 0 ? '' : ','.$biodata->pekerjaan_3 ?>"></span></p>
   </div>
 </section><!-- End Hero -->
 
