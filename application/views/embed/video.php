@@ -2,12 +2,20 @@
 
 <style>
     #myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-}
+      /* position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%; */
+
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      position: fixed;
+      top: 0;
+      left: 0;
+      /* z-index: -1; */
+    }
 
 /*Tambahkan beberapa konten di bagian bawah video / halaman */
 .content {
@@ -43,14 +51,21 @@
 </style>
 
 <!-- Videonya -->
+<section>
 <video
+    <?=$autoplay == '1' ? 'autoplay' : ''?>
     controlsList="nodownload" oncontextmenu="return false;"
     controls
     id="myVideo">
 
-  <source src="<?php echo base_url() ?>repo/portfolio/<?=$data?>" type="video/mp4">
-  <source src="<?php echo base_url() ?>repo/portfolio/<?=$data?>" type="video/mov">
+  <source src="<?= base_url() ?>repo/portfolio/<?=$data?>" type="video/mp4">
+  <source src="<?= base_url() ?>repo/portfolio/<?=$data?>" type="video/mov">
+  <source src="<?= base_url() ?>repo/portfolio/<?=$data?>" type="video/webm">
+  <source src="<?= base_url() ?>repo/portfolio/<?=$data?>" type="video/ogg">
 </video>
+</section>
+
+<!-- <iframe id="myVideo" src="<?php echo base_url() ?>repo/portfolio/<?=$data?>"></iframe> -->
 
 <!-- Opsional: beberapa teks overlay untuk mendeskripsikan video -->
 <!-- <div class="content">
@@ -64,6 +79,14 @@ var video = document.getElementById("myVideo");
 // Dapatkan buttonnya
 var btn = document.getElementById("myBtn");
 
+      // if (video.requestFullscreen) {
+      //   video.requestFullscreen();
+      // } else if (video.webkitRequestFullscreen) { /* Safari */
+      //   video.webkitRequestFullscreen();
+      // } else if (video.msRequestFullscreen) { /* IE11 */
+      //   video.msRequestFullscreen();
+      // }
+
 // Jeda dan putar video, dan ubah teks tombol
 function myFunction() {
   if (video.paused) {
@@ -73,5 +96,7 @@ function myFunction() {
     video.pause();
     btn.innerHTML = "<i class='fa fa-play'></i>";
   }
+
+  
 }
 </script>

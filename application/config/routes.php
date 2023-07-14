@@ -40,7 +40,6 @@ $route['sertifikasi/pembayaran'] = "administrasi_ujk/konfirmasi";
 
 $route['embed-video/(:any)'] = "embed/index/$1";
 
-
 $route['kontak-us'] = "welcome/kontak";
 $route['pendaftaran'] = "welcome/daftar_ujikom/1";
 

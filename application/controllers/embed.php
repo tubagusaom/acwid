@@ -6,12 +6,12 @@ class Embed extends MY_Controller {
 		parent::__construct();
 	}
 
-	function index($file) {
+	function index($file,$autoplay='false') {
 
-		// $data['aplikasi'] = $this->db->get('r_konfigurasi_aplikasi')->row();
 		$data['data'] = $file;
+		$data['autoplay'] = $autoplay;
 
-		// var_dump($data['aplikasi']); die();
+		// var_dump($autoplay); die();
 
 		$this->load->view('embed/video', $data);
 	}

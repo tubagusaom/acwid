@@ -210,10 +210,22 @@
                 } elseif ($ext_jenis == 'video') {
               ?>
 
-              <iframe class="img-fluid" src="<?php echo base_url() ?>embed-video/<?=$port->nama_file?>"></iframe>
+              <iframe class="img-fluid" src="<?=base_url()?>embed-video/<?=$port->nama_file?>"></iframe>
+
+              <!-- <video
+                  controlsList="nodownload" oncontextmenu="return false;"
+                  controls>
+
+                <source src="<?= base_url() ?>embed-video/<?=$port->nama_file?>" type="video/mp4">
+                <source src="<?= base_url() ?>embed-video/<?=$port->nama_file?>" type="video/webm">
+                <source src="<?= base_url() ?>embed-video/<?=$port->nama_file?>" type="video/ogg">
+                <source src="<?= base_url() ?>embed-video/<?=$port->nama_file?>" type="video/mov">
+              </video> -->
 
               <div class="portfolio-links">
-                <a title="" href="<?php echo base_url() ?>embed-video/<?=$port->nama_file?>" class="portfolio-lightbox">
+                <a title="" onclick="showVideo('<?php echo base_url() ?>embed-video/<?=$port->nama_file?>/1')" href="javascript:void(0)" data-vid="<?php echo base_url() ?>embed-video/<?=$port->nama_file?>/1" class="portfolio-poptb">
+                <!-- <a onclick="showVideo('9qD254rDtPs')" title="<?=$port->nama_dokumen?>" href="javascript:void(0)" data-vid="<?php echo base_url() ?>embed-video/<?=$port->nama_file?>/1" class="portfolio-poptb"> -->
+                <!-- <a title="<?=$port->nama_dokumen?>" href="<?php echo base_url() ?>embed-video/<?=$port->nama_file?>/1" data-gallery="portfolioGallery" class="portfolio-lightbox"> -->
                   <i class="fa fa-play"></i>
                 </a>
               </div>
@@ -223,7 +235,7 @@
                 <iframe class="img-fluid" src="<?=$port->nama_file?>"></iframe>
 
                 <div class="portfolio-links">
-                  <a title="<?=$port->nama_dokumen?>" href="<?=$port->nama_file?>?autoplay=1" class="portfolio-lightbox">
+                  <a title="<?=$port->nama_dokumen?>" href="<?=$port->nama_file?>" class="portfolio-lightbox">
                     <i class="fa fa-play"></i>
                   </a>
                 </div>
@@ -416,5 +428,7 @@
 
     </div>
   </section><!-- End Contact Section -->
+
+
 
 </main><!-- End #main -->

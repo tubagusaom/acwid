@@ -99,13 +99,50 @@
           background: url("<?php echo base_url() ?>assets/_tera_byte/img/aw-bg.png") top center;
           background-size: cover;
         }
+
+        .video-container{display:flex;justify-content:space-between;}
+        .video-column{position:relative;margin:10px;padding:0;width:100%;height:150px;background-color:hsl(49.3193717277deg 100% 62.5490196078%);background-image:url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgoYXtUZnZTMRDp72NcZuDnd_5tnid25z9uE1Gdzlfemd3KlOL1v_rNNe17U76Ai8IH6-uvbA7X0x0yf6S01mYHLF8E8GRTONtEv7hpE6C8rd6xYfscp1S4EvSZlzC-i4275BDz9mmaNLd3VPl-emUXSAw0iMyq6x3j__pcQoUs9-wHQRTVwiBlCwym/s1600/happy-play-icon.webp');background-repeat:no-repeat;background-size:cover;background-position:center;cursor:pointer;transition:background-color 0.3s;border-radius:10px;box-shadow:rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;}
+        .video-column:hover{background-color:rgba(0, 0, 0, 0.6);}
+        .video-column:before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:0;height:0;border-top:20px solid transparent;border-bottom:20px solid transparent;border-left:30px solid #fff;}
+        .title-caption{position:relative;font-size:14px;display:block;top:50%;margin:10px auto;padding:10px;color:#444;text-align:center;line-height:1}
+        
+        #video-popup{
+          display:none;
+          position:fixed;
+          top:0;
+          left:0;
+          width:100%;
+          height:100%;
+          background-color:rgba(0, 0, 0, 0.95);
+          z-index:999999!important;
+          align-items:center;
+          justify-content:center;
+          overflow: hidden!important;
+        }
+        #video-popup iframe{
+          /* width:560px;height:315px; */
+          /* width:90%;height:90%; */
+          aspect-ratio: 16 / 9;
+          width: 80%;
+        }
+        .close-button{position:absolute;top:50px;right:5%;background-color:#f44336;border:none;cursor:pointer;width:30px;height:30px;padding:0;border-radius:100%;}
+        .close-button svg{background:none;width:30px;height:30px;vertical-align:9px;}
+        .close-button svg path{fill:#fff;}
+
+        @media screen and (max-width:480px){
+          .video-container{display:flex;flex-wrap:wrap;}
+          .video-column{margin:10px auto;height:150px;}
+          .title-caption{top:60%;}
+          .close-button{top:20%;right:10%;}
+        }
+
         </style>
 
     </head>
 
     
 
-    <body>
+    <body id="body">
 
     <!-- <script>
   Swal.fire({
