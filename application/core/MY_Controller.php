@@ -263,7 +263,13 @@ class MY_Controller extends CI_Controller {
             'ICO',
             'CUR',
             'TIF',
-            'TIFF');
+            'TIFF',
+            'CDR',
+            'CR2',
+            'NEF',
+            'ORF',
+            'SR2',
+            'XCF');
         $ext_vid = array(
             'AVI',
             'MP4',
