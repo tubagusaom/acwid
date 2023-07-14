@@ -314,7 +314,8 @@ class MY_Controller extends CI_Controller {
             'NSV',
             'F4V',
             'F4A',
-            'F4B');
+            'F4B',
+            'AVCHD');
 
         if (in_array($ext_upper, $ext_img)) {
             $jex = 'image';
