@@ -240,7 +240,30 @@ class MY_Controller extends CI_Controller {
 
         $ext_upper = strtoupper($ext);
 
-        $ext_img = array('JPEG','JPG','PNG','GIF','TIFF','PSD','PDF','EPS','AI','INDD','RAW');
+        $ext_img = array(
+            'JPEG',
+            'JPG',
+            'PNG',
+            'GIF',
+            'TIFF',
+            'PSD',
+            'PDF',
+            'EPS',
+            'AI',
+            'INDD',
+            'RAW',
+            'APNG',
+            'AVIF',
+            'JFIF',
+            'PJPEG',
+            'PJP',
+            'SVG',
+            'WEBP',
+            'BMP',
+            'ICO',
+            'CUR',
+            'TIF',
+            'TIFF');
         $ext_vid = array(
             'AVI',
             'MP4',
