@@ -241,7 +241,51 @@ class MY_Controller extends CI_Controller {
         $ext_upper = strtoupper($ext);
 
         $ext_img = array('JPEG','JPG','PNG','GIF','TIFF','PSD','PDF','EPS','AI','INDD','RAW');
-        $ext_vid = array('AVI','MP4','MPG','WEBM','MKV','GIFV','WMV','MOV');
+        $ext_vid = array(
+            'AVI',
+            'MP4',
+            'MPG',
+            'WEBM',
+            'MKV',
+            'GIFV',
+            'WMV',
+            'MOV',,
+            'FLV',
+            'VOB',
+            'OGV',
+            'OGG',
+            'DRC',
+            'GIF',
+            'GIVF',
+            'MNG',
+            'MTS',
+            'M2TS',
+            'TS',
+            'QT',
+            'YUV',
+            'RM',
+            'RMVB',
+            'VIV',
+            'ASF',
+            'AMV',
+            'M4P',
+            'DRM',
+            'M4V',
+            'MP2',
+            'MPEG',
+            'MPE',
+            'MPV',
+            'MPG',
+            'M2V',
+            'SVI',
+            '3GP',
+            '3G2',
+            'MXF',
+            'ROQ',
+            'NSV',
+            'F4V',
+            'F4A',
+            'F4B');
 
         if (in_array($ext_upper, $ext_img)) {
             $jex = 'image';
