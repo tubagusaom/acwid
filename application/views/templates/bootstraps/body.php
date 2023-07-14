@@ -223,9 +223,7 @@
               </video> -->
 
               <div class="portfolio-links">
-                <a title="" onclick="showVideo('<?php echo base_url() ?>embed-video/<?=$port->nama_file?>/1')" href="javascript:void(0)" data-vid="<?php echo base_url() ?>embed-video/<?=$port->nama_file?>/1" class="portfolio-poptb">
-                <!-- <a onclick="showVideo('9qD254rDtPs')" title="<?=$port->nama_dokumen?>" href="javascript:void(0)" data-vid="<?php echo base_url() ?>embed-video/<?=$port->nama_file?>/1" class="portfolio-poptb"> -->
-                <!-- <a title="<?=$port->nama_dokumen?>" href="<?php echo base_url() ?>embed-video/<?=$port->nama_file?>/1" data-gallery="portfolioGallery" class="portfolio-lightbox"> -->
+                <a onclick="showVideo('<?=base_url()?>embed-video/<?=$port->nama_file?>/1' , '<?=$port->nama_dokumen?>' , '<?=$port->description?>')" href="javascript:void(0)" class="portfolio-poptb">
                   <i class="fa fa-play"></i>
                 </a>
               </div>

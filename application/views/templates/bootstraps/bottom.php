@@ -5,12 +5,26 @@
 <div class="video-column" onclick="showVideo('V6zCKJZ2XlY')"><div class="title-caption">Video 3</div></div>
 </div> -->
 
-<div id="video-popup">
+<style>
+
+
+</style>
+
+<div id="video-popup" onclick="closeVideo()">
   <span class="close-button" onclick="closeVideo()">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2C6.47,2 2,6.47 2,12C2,17.53 6.47,22 12,22C17.53,22 22,17.53 22,12C22,6.47 17.53,2 12,2M14.59,8L12,10.59L9.41,8L8,9.41L10.59,12L8,14.59L9.41,16L12,13.41L14.59,16L16,14.59L13.41,12L16,9.41L14.59,8Z" /></svg>
+    <svg viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"/></svg>
   </span>
+
   <iframe id="video-frame" frameborder="0" allowfullscreen></iframe>
+
+  <div class="tbbox-description">
+    <div class="description-bottom">
+      <p class="text-description-header"></p>
+      <p class="text-description-isi"></p>
+    </div>
+  </div>
 </div>
+
 
 <!-- ======= Footer ======= -->
 <footer id="footer">
@@ -56,31 +70,10 @@
 <script src="<?php echo base_url() ?>assets/_tera_byte/js/script.js"></script>
 
 <script>
-  // $(".portfolio-poptb").click(function() {
-
-  //   var href =  $(".portfolio-poptb").attr("href");
-
-  //   alert(href);
-  // });
-
-  // function showVideo(videoId) {
-  //   var videoPopup = document.getElementById('video-popup');
-  //   var videoFrame = document.getElementById('video-frame');
-  //   var bodyMain   = document.getElementById('body');
-
-  //   videoFrame.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
-  //   videoPopup.style.display = 'flex';
-  //   bodyMain.style.overflow = 'hidden';
-  // }
-  
-  // var videoFrame = document.getElementById('video-frame');
-  // videoFrame.src = ''; videoPopup.style.display = 'none';
-
-  
 
   // $(document).ready(function() {
     // $('.portfolio-poptb').click(function() {
-      function showVideo(videoId) {
+      function showVideo(vidLink,vidTitle,vidDesc) {
       // alert('Item selected');
 
       
@@ -89,27 +82,22 @@
       var videoPopup = document.getElementById('video-popup');
       var videoFrame = document.getElementById('video-frame');
 
-      var title =  $(".portfolio-poptb").attr("title");
-      var video =  $(".portfolio-poptb").attr("data-vid");
-      
+      // var title =  $(".portfolio-poptb").attr("title");
+      // var desc =  $(".portfolio-poptb").attr("desc");
+      // var video =  $(".portfolio-poptb").attr("data-vid");
+
       videoPopup.style.display = 'flex';
       bodyMain.style.overflow = 'hidden';
 
       $("#video-frame").attr({
-        "src" : videoId,
-        "title" : title
+        "src" : vidLink,
+        "title" : vidTitle
       });
 
-      // if (videoFrame.requestFullscreen) {
-      //   videoFrame.requestFullscreen();
-      // } else if (videoFrame.webkitRequestFullscreen) { /* Safari */
-      //   videoFrame.webkitRequestFullscreen();
-      // } else if (videoFrame.msRequestFullscreen) { /* IE11 */
-      //   videoFrame.msRequestFullscreen();
-      // }
+      $(".text-description-header").html("<b>" + vidTitle + "</b>");
+      $(".text-description-isi").html(vidDesc);
 
-      // alert(videoId);
-      // alert($(".portfolio-poptb").attr("data-vid"));
+      // alert(p1);
 
     // });
     };
@@ -134,12 +122,27 @@
         "title" : ""
     });
 
+    $(".text-description").html('');
+
   }
 
+   // $(".portfolio-poptb").click(function() {
 
+  //   var href =  $(".portfolio-poptb").attr("href");
 
+  //   alert(href);
+  // });
 
-  
+  // function showVideo(videoId) {
+  //   var videoPopup = document.getElementById('video-popup');
+  //   var videoFrame = document.getElementById('video-frame');
+  //   var bodyMain   = document.getElementById('body');
+
+  //   videoFrame.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+  //   videoPopup.style.display = 'flex';
+  //   bodyMain.style.overflow = 'hidden';
+  // }
+
 
   // var test=document.querySelector(".portfolio-poptb");
 

@@ -120,20 +120,68 @@
           overflow: hidden!important;
         }
         #video-popup iframe{
-          /* width:560px;height:315px; */
-          /* width:90%;height:90%; */
           aspect-ratio: 16 / 9;
           width: 80%;
+
+          -webkit-box-shadow: 1px 2px 9px 0 rgba(0, 0, 0, 0.65);
+          box-shadow: 1px 2px 9px 0 rgba(0, 0, 0, 0.65);
         }
-        .close-button{position:absolute;top:50px;right:5%;background-color:#f44336;border:none;cursor:pointer;width:30px;height:30px;padding:0;border-radius:100%;}
-        .close-button svg{background:none;width:30px;height:30px;vertical-align:9px;}
-        .close-button svg path{fill:#fff;}
+        .close-button{
+          position:absolute;
+          top:50px;right:5%;
+          background-color: rgba(0, 0, 0, 0.32);
+          border:none;cursor:pointer;width:30px;height:30px;padding:0;border-radius:100%;
+        }
+        .close-button:hover{
+          background-color: rgba(0, 0, 0, 0.7);
+        }
+        .close-button svg{
+          background:none;
+          width:30px;
+          height:30px;vertical-align:9px;
+        }
+        .close-button svg path{fill:#bbb;}
+        .close-button svg path:hover{fill:#eee;}
 
         @media screen and (max-width:480px){
           .video-container{display:flex;flex-wrap:wrap;}
           .video-column{margin:10px auto;height:150px;}
           .title-caption{top:60%;}
           .close-button{top:20%;right:10%;}
+        }
+
+        .tbbox-description {
+          position: absolute;
+          display: flex;
+          -webkit-box-flex: 1;
+          -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+          
+          height: auto !important;
+          width: 100%;
+          bottom: 0;
+          padding: 19px 11px;
+          max-width: 100vw !important;
+          -webkit-box-ordinal-group: 3 !important;
+          -ms-flex-order: 2 !important;
+          order: 2 !important;
+          max-height: 78vh;
+          overflow: auto !important;
+
+          -webkit-transition: opacity 0.3s linear;
+          transition: opacity 0.3s linear;
+          padding-bottom: 20px;
+          background: #fff!important;
+          z-index: 999999!important;
+        }
+
+        .tbbox-description.description-bottom,
+        .tbbox-description.description-top {
+          margin: 0 auto;
+          width: 100%;
+        }
+        .tbbox-description p {
+          margin-bottom: 12px;
         }
 
         </style>
