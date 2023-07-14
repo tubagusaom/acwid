@@ -233,7 +233,7 @@
                 <iframe class="img-fluid" src="<?=$port->nama_file?>"></iframe>
 
                 <div class="portfolio-links">
-                  <a title="<?=$port->nama_dokumen?>" href="<?=$port->nama_file?>" class="portfolio-lightbox">
+                  <a title="<?=$port->nama_dokumen?>" href="<?=$port->nama_file?>?autoplay=1" class="portfolio-lightbox">
                     <i class="fa fa-play"></i>
                   </a>
                 </div>

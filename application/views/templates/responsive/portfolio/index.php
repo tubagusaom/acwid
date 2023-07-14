@@ -113,7 +113,27 @@
                                                         <td><?=$port->nama_dokumen?></td>
                                                         <td><?=$port->file_size?></td>
                                                         <td align="center">
-                                                            <a href="<?= base_url() . 'repo/portfolio/' . $port->nama_file ?>" target="_blank"> <i class="icon-cloud-download font-dark"></i></a>
+
+                                                        <?php
+                                                            $ext_jenis = $port->extension_jenis;
+
+                                                            if ($ext_jenis == 'image') {
+                                                        ?>
+
+                                                        <a href="<?= base_url() . 'repo/portfolio/' . $port->nama_file ?>" target="_blank"> <i class="icon-cloud-download font-dark"></i></a>
+
+                                                        <?php
+                                                            } elseif ($ext_jenis == 'video') {
+                                                        ?>
+
+                                                        <a href="<?=base_url()?>embed-video/<?=$port->nama_file?>/1" target="_blank"> <i class="icon-cloud-download font-dark"></i></a>
+
+                                                        <?php }elseif ($ext_jenis == 'link') { ?>
+
+                                                        <a href="<?=$port->nama_file?>?autoplay=1" target="_blank"> <i class="icon-cloud-download font-dark"></i></a>
+
+                                                        <?php } ?>
+
                                                             &nbsp
                                                             <a alt="Hapus Portfolio" href="<?= base_url() . 'portfolio/hapus/' . $port->id ?>"> <i class="icon-trash font-dark"></i></a>
                                                             <!-- &nbsp
