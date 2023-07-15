@@ -278,7 +278,7 @@ class MY_Controller extends CI_Controller {
             'MKV',
             'GIFV',
             'WMV',
-            'MOV',,
+            'MOV',
             'FLV',
             'VOB',
             'OGV',
