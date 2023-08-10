@@ -80,7 +80,7 @@
             </li>
             <li class="nav-item <?= $this->uri->segment(1) == 'portfolio' && $this->uri->segment(2) == 'upload' ? 'active' : '' ?>">
                 <a href="<?= base_url() . 'portfolio/upload' ?>" class="nav-link ">
-                    <span class="title">Upload Portfolio</span>
+                    <span class="title">Add Portfolio</span>
                 </a>
             </li>
             <li class="nav-item  <?= $this->uri->segment(1) == 'portfolio' && $this->uri->segment(2) == 'index' ? 'active' : '' ?>">
