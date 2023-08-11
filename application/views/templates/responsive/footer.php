@@ -18,6 +18,9 @@
 </div>
 <!-- END FOOTER -->
 </div>
+
+<script src="<?= base_url();?>assets/_tera_byte/form/vendor/jquery.2.1.3/jquery.min.js"></script>
+
 <script src="<?= base_url() ?>assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 

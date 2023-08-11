@@ -96,9 +96,33 @@ class Portfolio extends MY_Controller {
 
 
 
+    function delete_ajax($nmdokumen){
 
+        $filepath = "repo/portfolio/$nmdokumen";
 
+        // var_dump($filepath); die();
 
+        if (is_file($filepath))
+        {
+            unlink($filepath);
+        }
+
+    }
+
+    public function upload_ajax($nmdokumen)
+    {
+        $this->load->helper('postinger');
+        $this->load->library('upload');
+
+        $files = $_FILES['file'];
+        // $namafile = $nmdokumen . "-" . time() . "_" . $files['name'];
+        // $namafile = $nmdokumen . "-" . time() . "-buktipendukung";
+        $namafile = $nmdokumen . time();
+        $fileupload = $this->upload_allportofolio('file', $namafile);
+        echo $fileupload;
+
+        // var_dump($namafile); die();
+    }
 
     function upload() {
         $template_header = 'templates/responsive/header';
@@ -114,37 +138,93 @@ class Portfolio extends MY_Controller {
     }
 
     function add() {
-        $aplikasi = $this->aplikasi;
-        if (isset($_FILES['nama_file']['tmp_name']) && !empty($_FILES['nama_file']['tmp_name'])) {
-            $data['nama_file'] = 'portfolio_acwid_' . time() . '_' . str_replace(' ', '_', $_FILES['nama_file']['name']);
-            $config['upload_path'] = substr(__dir__, 0, strpos(__dir__, "application")) . 'repo/portfolio/';
-            $config['allowed_types'] = '*';
-            $config['max_size'] = 11000000;
-            $config['file_name'] = $data['nama_file'];
-            $this->load->library('upload', $config);
-            if (!$this->upload->do_upload('nama_file')) {
 
-				$this->session->set_flashdata('result', 'gagal update');
-				$this->session->set_flashdata('mode_alert', 'alert');
+        $nama_dokumen = $this->input->post('nama_dokumen', true);
+        $file_data    = $this->input->post('file_data', true);
+        $filesize     = $this->input->post('file_size', true);
+        $fileext      = $this->input->post('file_ext', true);
+        
+        $nama_portfolio = $this->input->post('nama_portfolio');
+        $id_categories = $this->input->post('id_categories');
+        $description   = $this->input->post('description');
 
-				redirect(base_url() . 'portfolio/upload');
-            } else {
-                $data_upload = $this->upload->data();
-                $data['file_size'] = round(($data_upload['file_size'] / 1024), 2) . ' MB';
-                $data['extension'] = str_replace('.', '', $data_upload['file_ext']);
-                $data['id_asesi'] = $this->id;
-                $data['nama_file'] = $config['file_name'];
-                $data['id_categories'] = $this->input->post('id_categories');
-                $data['nama_dokumen'] = $this->input->post('nama_dokumen');
-                $data['description'] = $this->input->post('description');
-                if($this->db->insert('t_portfolio', $data)){
-					$this->session->set_flashdata('result', 'Portfolio berhasil ditambah');
-					$this->session->set_flashdata('mode_alert', 'success');
-	                redirect('portfolio/index');
-                }
-            }
+        // var_dump(($file_data)); die();
+
+        $data['id_asesi'] = $this->id;
+
+        foreach ($nama_dokumen as $key => $value) {
+
+        //     // $aplikasi = $this->aplikasi;
+
+            $array_portofolio[$key] = $file_data[$key];
+            $array_filesize[$key] = $filesize[$key];
+            $array_fileext[$key] = $fileext[$key];
+
+            $arr_ext = str_replace('.', '', $array_fileext[$key]);
+
+            $array_jenis = $this->cek_ext_file($arr_ext);
+
+            $data_detail = array(
+                'file_size' => round(($array_filesize[$key] / 1024), 2) . ' MB',
+                'extension' => $arr_ext,
+                'id_asesi' => $this->id,
+                'nama_file' => $array_portofolio[$key],
+                'id_categories' => $id_categories,
+                'nama_dokumen' => $nama_portfolio,
+                'extension_jenis' => $array_jenis,
+                'description' => $description,
+            );
+
+            // if($this->db->insert('t_portfolio', $data)){
+				// $this->session->set_flashdata('result', 'Portfolio berhasil ditambah');
+				// $this->session->set_flashdata('mode_alert', 'success');
+	        //     redirect('portfolio/index');
+            // }
+
+            $this->db->insert('t_portfolio', $data_detail);
+            
         }
+
+        $this->session->set_flashdata('result', 'Portfolio berhasil ditambah');
+		$this->session->set_flashdata('mode_alert', 'success');
+	    redirect('portfolio/index');
+
+        // var_dump(($array_portofolio)); die();
     }
+
+    // function add() {
+    //     $aplikasi = $this->aplikasi;
+    //     if (isset($_FILES['nama_file']['tmp_name']) && !empty($_FILES['nama_file']['tmp_name'])) {
+    //         $data['nama_file'] = 'portfolio_acwid_' . time() . '_' . str_replace(' ', '_', $_FILES['nama_file']['name']);
+    //         $config['upload_path'] = substr(__dir__, 0, strpos(__dir__, "application")) . 'repo/portfolio/';
+    //         $config['allowed_types'] = '*';
+    //         $config['max_size'] = 11000000;
+    //         $config['file_name'] = $data['nama_file'];
+    //         $this->load->library('upload', $config);
+
+    //         if (!$this->upload->do_upload('nama_file')) {
+
+	// 			$this->session->set_flashdata('result', 'Portfolio gagal ditambahkan');
+	// 			$this->session->set_flashdata('mode_alert', 'alert');
+
+	// 			redirect(base_url() . 'portfolio/upload');
+    //         } else {
+    //             $data_upload = $this->upload->data();
+    //             $data['file_size'] = round(($data_upload['file_size'] / 1024), 2) . ' MB';
+    //             $data['extension'] = str_replace('.', '', $data_upload['file_ext']);
+    //             $data['id_asesi'] = $this->id;
+    //             $data['nama_file'] = $config['file_name'];
+    //             $data['id_categories'] = $this->input->post('id_categories');
+    //             $data['nama_dokumen'] = $this->input->post('nama_dokumen');
+    //             $data['description'] = $this->input->post('description');
+    //             if($this->db->insert('t_portfolio', $data)){
+	// 				$this->session->set_flashdata('result', 'Portfolio berhasil ditambah');
+	// 				$this->session->set_flashdata('mode_alert', 'success');
+	//                 redirect('portfolio/index');
+    //             }
+    //         }
+    //     }
+    // }
 
     function index() { 
         $template_header = 'templates/responsive/header';

@@ -234,6 +234,36 @@ class MY_Controller extends CI_Controller {
       return $y;
     }
 
+    public function upload_allportofolio($param = "", $filename = "") {
+        $configFile['upload_path'] = './repo/portfolio/';
+        // $configFile['allowed_types'] = 'pdf|gif|jpg|png|jpeg|rtf|doc|docx|xls|xlsx|ppt|pptx|bmp|avi|flv|wmv|mp3|mp4';
+        // $configFile['allowed_types'] = 'rtf|doc|docx|xls|xlsx|ppt|pptx|pdf|gif|jpg|png|jpeg|bmp|avi|flv|wmv|mp3|mp4';
+        // $configFile['allowed_types'] = 'JPEG|JPG|PNG|GIF|TIFF|PSD|PDF|EPS|AI|INDD|RAW|APNG|AVIF|JFIF|PJPEG|PJP|SVG|WEBP|BMP|ICO|CUR|TIF|TIFF|CDR|CR2|NEF|ORF|SR2|XCF|TERABYTE|AVI|MP4|MPG|WEBM|MKV|GIFV|WMV|MOV|FLV|VOB|OGV|OGG|DRC|GIF|GIVF|MNG|MTS|M2TS|TS|QT|YUV|RM|RMVB|VIV|ASF|AMV|M4P|DRM|M4V|MP2|MPEG|MPE|MPV|MPG|M2V|SVI|3GP|3G2|MXF|ROQ|NSV|F4V|F4A|F4B|AVCHD';
+        // $configFile['allowed_types'] = 'jpeg|jpg|png|gif|tiff|psd|pdf|eps|ai|indd|raw|apng|avif|jfif|pjpeg|pjp|svg|webp|bmp|ico|cur|tif|tiff|cdr|cr2|nef|orf|sr2|xcf|TERABYTE|avi|mp4|mpg|webm|mkv|MKV|gifv|wmv|mov|flv|vob|ogv|ogg|drc|gif|givf|mng|mts|m2ts|ts|qt|yuv|rm|rmvb|viv|asf|amv|m4p|drm|m4v|mp2|mpeg|mpe|mpv|mpg|m2v|svi|3gp|3g2|mxf|roq|nsv|f4v|f4a|f4b|avchd';
+        $configFile['allowed_types'] = '*';
+        $configFile['max_size'] = 11000000;
+        $configFile['file_name'] = $filename;
+        $configFile['remove_spaces'] = TRUE;
+
+        // var_dump($param); die();
+
+        $this->upload->initialize($configFile);
+
+        if (!$this->upload->do_upload($param)) {
+            $error = array('error' => $this->upload->display_errors());
+
+            $result = json_encode($error);
+        } else {
+            $data = array('upload_data' => $this->upload->data());
+
+            $result = json_encode($data);
+        }
+
+        return $result;
+    }
+
+    
+
     function cek_ext_file ($ext){
         // $ext_img = ['JPEG','JPG','PNG','GIF','TIFF','PSD','PDF','EPS','AI','INDD','RAW'];
         // $ext_vid = ['AVI','MP4','MPG','WEBM','MKV','GIFV','WMV'];

@@ -1,4 +1,27 @@
 
+<style>
+	#myOverlay{
+        position:fixed;
+        top:0px;
+        bottom:0px;
+        width:100%;
+        overflow-y:auto;
+    }
+    #myOverlay{background:black;opacity:.7;z-index:9995;}
+    #loadingGIF{position:fixed;top:40%;left:45%;z-index:9996;}
+	#loadingGIF img{width: 100px;}
+
+	/* @media screen and (min-width: 80rem) {
+
+	} */
+</style>
+
+<div id="myOverlay"></div>
+<!-- <div id="loadingGIF"><img src="<?=base_url()?>assets/_tera_byte/images/book-gif.gif" /></div> -->
+<div id="loadingGIF">
+	<img src="<?=base_url()?>assets/gif/spin-200.gif" />
+</div>
+
 <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper">
     <!-- BEGIN CONTENT BODY -->
@@ -64,21 +87,22 @@
                                 <span class="input-group-addon">
                                     <i class="fa fa-folder"></i>
                                 </span>
-                                <input name="nama_dokumen"  required type="text" class="form-control" placeholder="Nama Dokumen"> </div>
+                                <input name="nama_portfolio"  required type="text" class="form-control" placeholder="Nama Dokumen"> </div>
                         </div>
 
                         <div class="form-group">
                             
 
                             <label class="control-label col-md-3">
-                                File <br>
-                                <b style="font-size:11px; color:red;">file size : 296px X 222px</b>
+                                File Portfolio<br>
+                                <!-- <b style="font-size:11px; color:red;">file size : 296px X 222px</b> -->
                             </label>
                             <div class="input-group">
                                 <span class="input-group-addon">
                                     <i class="fa fa-file"></i>
                                 </span>
-                                <input accept="image/*,video/*" name="nama_file" required type="file" class="form-control" placeholder="Browse File">
+                                <input type="file" id="portfolio" name="nama_file" accept="image/*,video/*" required class="form-control" placeholder="Browse File">
+                                <div id="dportfolio"></div>
                             </div>
                             <!-- <div class="input-group left"><font>xxx</font></div> -->
                             
@@ -104,3 +128,88 @@
                 <!-- END FORM-->
             </div>
             </div></div></div>
+
+
+            <script>
+                var baseUrl = "<?= base_url(); ?>";
+                $('#popOverlay').hide();
+
+                $('#myOverlay').hide();
+                $('#loadingGIF').hide();
+
+                $("#portfolio").on('change', function (e) {
+                e.preventDefault();
+                var urlTarget = baseUrl + "portfolio/upload_ajax/portfolio_acwid_";
+                var f = $(this);
+                var listFiles = f[0].files;
+                var formData = new FormData();
+                formData.append('file', listFiles[0]);
+                $('#myOverlay').show();
+                $('#loadingGIF').show();
+                $.ajax({
+                    url: urlTarget,
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                    data = JSON.parse(data);
+                    if(data.error){
+                        $('#myOverlay').hide();
+                        $('#loadingGIF').hide();
+                        $("#portfolio").val("");
+                        alert(data.error);
+                    }else{
+
+                        var idUpload = data.upload_data.file_name;
+                        var acuanId = idUpload.replace(".", "-");
+
+                        var txt0 = "<div id='box-"+acuanId+"' class='col col-md-3 col-sm-4 col-xs-6 form-upload-tb'>";
+                        var txt1 = "<input id='nd-' type='hidden' name='nama_dokumen[]' class='nama_dokumen' value='portfolio' />";
+                        var txt_x = "<input type='hidden' name='file_ext[]' class='form-control input-sm uploadData' value='" + data.upload_data.file_ext + "' />";
+                        var txt_xx = "<input type='hidden' name='file_size[]' class='form-control input-sm uploadData' value='" + data.upload_data.file_size + "' />";
+                        var txt2 = "<input type='hidden' name='file_data[]' id='foto' class='form-control input-sm uploadData' value='" + data.upload_data.file_name + "' />";
+                        var txt3 = "<a id='al-' target='_blank' class='form-link-tb uploadData' href='" + baseUrl + 'repo/portfolio/' + data.upload_data.file_name + "'>Portfolio </a>";
+                        // var txt4 = "<img id='img-"+acuanId+"' dataimg='"+data.upload_data.file_name+"' inisialjenis='Pasfoto' onclick='popImage(this)' class='form-images-tb' src='" + baseUrl + 'repo/asesi/' + data.upload_data.file_name + "' alt='tera_byte'>";
+                        var txt5 = "<span id='span-' style='cursor:pointer; color:red;' class='form-link-delete' title='Delete Portfolio' datatb='"+data.upload_data.file_name+"' datajenis='pasfoto' onclick='deleteImage(this)'><i class='fa fa-times'></i></span></div>";
+
+                        $("#dportfolio").append(txt0 + txt1 + txt_x + txt_xx + txt2 + txt3 + txt5);
+                        $('#myOverlay').hide();
+                        $('#loadingGIF').hide();
+                    }
+                    },
+                    error: function (request, status, error) {
+                        alert(request.responseText);
+                    }
+                });
+                return false;
+            });
+
+            function deleteImage(d) {
+            var getJenis  = d.getAttribute("datajenis");
+            var getImg  = d.getAttribute("datatb");
+            var getIdinput  = "#" + getJenis;
+            var getId  = "#box-" + getImg;
+            var resId = getId.replace(".", "-");
+
+            var urlTarget = baseUrl + "portfolio/delete_ajax/" + getImg;
+            $('#myOverlay').show();
+            $('#loadingGIF').show();
+
+            $.ajax({
+                type: 'POST',
+                url: urlTarget,
+                // data: data,
+                success: function() {
+                $(getIdinput).val('');
+                $(resId).remove();
+                $('#myOverlay').hide();
+                $('#loadingGIF').hide();
+                }
+            });
+            return false;
+
+            // alert(resId);
+
+            };
+            </script>
