@@ -44,6 +44,7 @@ $route['kontak-us'] = "welcome/kontak";
 $route['pendaftaran'] = "welcome/daftar_ujikom/1";
 
 
+$route['name_card'] = "welcome/name_card";
 $route['csa'] = "welcome/csa";
 
 

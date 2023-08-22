@@ -767,6 +767,14 @@ class Welcome extends MY_Controller {
         }
     }
 
+    function name_card() {
+        $data['aplikasi'] = $this->db->get('r_konfigurasi_aplikasi')->row();
+
+        // $this->load->view('templates/bootstraps/header_pelatihan', $data);
+        $this->load->view('templates/card_name/index', $data);
+        // $this->load->view('templates/bootstraps/bottom_pelatihan', $data);
+    }
+
     function csa() {
         $data['aplikasi'] = $this->db->get('r_konfigurasi_aplikasi')->row();
 
