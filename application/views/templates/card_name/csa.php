@@ -25,7 +25,7 @@
             <div class="banner"></div>
             <ul>
                 <li><b>Achmad Widjaja</b></li>
-                <li style="font-size:13px;padding-top:10px;">President Commisioner</li>
+                <li style="font-size:14px;padding-top:10px;">President Commisioner</li>
                 <li style="font-size:14px;padding-top:5px;">PT CATUR SENTOSA ADIPRANA Tbk</li>
             </ul>
             <button class="contact" id="main-button">click for detail information</button>
