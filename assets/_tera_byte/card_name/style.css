@@ -30,8 +30,11 @@ a
     margin-top:100px;
     background-color: white;
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
+    border-radius: 5px;
+
     -webkit-transition: all 0.7s ease-in-out;
     -moz-transition:    all 0.7s ease-in-out;
     -o-transition:      all 0.7s ease-in-out;
@@ -57,6 +60,8 @@ a
     background: linear-gradient(45deg, #b53f3f 0%, #b53f3f 1%, #000000 100%);
     background-size: cover;
     border-bottom: solid 1px lightgrey;
+
+    border-radius: 5px 5px 0 0;
   
     -webkit-transition: all 0.7s ease-in-out;
     -moz-transition:    all 0.7s ease-in-out;
