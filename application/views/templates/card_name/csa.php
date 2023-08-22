@@ -25,8 +25,8 @@
             <div class="banner"></div>
             <ul>
                 <li><b>Achmad Widjaja</b></li>
-                <li>President Commisioner</li>
-
+                <li style="font-size:12px;padding-top:10px;">President Commisioner</li>
+                <li style="font-size:14px;padding-top:5px;">PT CATUR SENTOSA ADIPRANA Tbk</li>
             </ul>
             <button class="contact" id="main-button">click for detail information</button>
             <div class="social-media-banner">
@@ -37,6 +37,12 @@
             </div>
 
           <form class="email-form">
+
+                <div class="details">
+                    <div class="col-satu"><i class="fa fa-briefcase"></i> &nbsp; PT CATUR SENTOSA ADIPRANA Tbk</div>
+                    <!-- <div class="col-dua">PT CATUR SENTOSA ADIPRANA Tbk</div> -->
+                </div>
+
                 <div class="details">
                     <i class="fa fa-phone"></i> &nbsp; &nbsp; +62 21 5668801
                 </div>
@@ -47,6 +53,10 @@
 
                 <div class="details">
                     <i class="fa fa-envelope-o"></i> &nbsp; achmadwidjaja@me.com
+                </div>
+
+                <div class="details">
+                    <i class="fa fa-map-marker"></i> &nbsp; Jl. Daan Mogot Raya No. 234, Jakarta 11510
                 </div>
 
                 <!-- <button class="contact">send</button> -->
