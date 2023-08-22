@@ -44,6 +44,9 @@ $route['kontak-us'] = "welcome/kontak";
 $route['pendaftaran'] = "welcome/daftar_ujikom/1";
 
 
+$route['csa'] = "welcome/csa";
+
+
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
