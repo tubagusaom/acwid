@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="details">
-                    <i class="fa fa-mobile"></i> &nbsp; &nbsp; &nbsp; +62 21 5668801
+                    <i class="fa fa-mobile"></i> &nbsp; &nbsp; &nbsp; +62 813 9999 0707
                 </div>
 
                 <div class="details">
