@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Achmad Widjaja - CSA</title>
+    <title>Achmad Widjaja</title>
+
+    <meta name="description" content="President Commisioner CSA" />
+    <meta name="keywords" content="Biografi, Profil, achmad widjaja, acwid, achmad, widjaja" />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="<?=base_url()?>assets/_tera_byte/img/favicon.png" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="<?=base_url()?>assets/_tera_byte/img/apple-touch-icon.png">
+    <link rel="shortcut icon" href="<?=base_url()?>assets/_tera_byte/img/awcsa.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="<?=base_url()?>assets/_tera_byte/img/awcsa-touch-icon.png">
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,300" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
