@@ -40,7 +40,6 @@
 
                 <div class="details">
                     <div class="col-satu"><i class="fa fa-briefcase"></i> &nbsp; PT CATUR SENTOSA ADIPRANA Tbk</div>
-                    <!-- <div class="col-dua">PT CATUR SENTOSA ADIPRANA Tbk</div> -->
                 </div>
 
                 <div class="details">

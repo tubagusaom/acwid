@@ -12,7 +12,7 @@ $(document).ready(function()
         var buttonText = $('button.contact#main-button').text();
         if (buttonText === 'back')
         {
-            buttonText = 'click to get in touch';
+            buttonText = 'click for detail information';
             $('button.contact#main-button').text(buttonText);
         }
         else
