@@ -25,19 +25,30 @@
                 <li>President Commisioner</li>
 
             </ul>
-            <button class="contact" id="main-button">click to get in touch</button>
+            <button class="contact" id="main-button">click for detail information</button>
             <div class="social-media-banner">
                 <a href=""><i class="fa fa-twitter"></i></a>
                 <a href=""><i class="fa fa-facebook"></i></a>
                 <a href=""><i class="fa fa-instagram"></i></a>
                 <a href=""><i class="fa fa-linkedin"></i></a>
             </div>
+
           <form class="email-form">
-                <input id="name" type="text" placeholder="name">
-                <input id="email" type="text" placeholder="email">
-                <textarea id="comment" type="text" placeholder="comment"></textarea>
-                <button class="contact">send</button>
+                <div class="details">
+                    <i class="fa fa-phone"></i> &nbsp; &nbsp; +62 21 5668801
+                </div>
+
+                <div class="details">
+                    <i class="fa fa-mobile"></i> &nbsp; &nbsp; &nbsp; +62 21 5668801
+                </div>
+
+                <div class="details">
+                    <i class="fa fa-envelope-o"></i> &nbsp; achmadwidjaja@me.com
+                </div>
+
+                <!-- <button class="contact">send</button> -->
           </form>
+
           </div>
     </body>
 
