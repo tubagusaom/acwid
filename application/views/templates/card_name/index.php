@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,300" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="<?= base_url() ?>assets/_tera_byte/card_name/style.css" rel="stylesheet">
+    <link href="<?= base_url() ?>assets/_tera_byte/card_name/style_1.css" rel="stylesheet">
 </head>
 
 
