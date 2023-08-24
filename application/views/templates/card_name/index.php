@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Achmad Widjaja</title>
 
-    <meta name="description" content="Card Name" />
+    <meta name="description" content="Name Card" />
     <meta name="keywords" content="Biografi, Profil, achmad widjaja, acwid, achmad, widjaja" />
 
     <!-- Favicon -->
