@@ -26,7 +26,9 @@
             <ul>
                 <li><b>Achmad Widjaja</b></li>
                 <li style="font-size:14px;padding-top:10px;">President Commisioner & Independent Commissioner</li>
-                <li style="font-size:14px;padding-top:5px;"><b>Astrindo Nusantara Infrastruktur</b></li> <br>
+                <li style="font-size:14px;padding-top:5px;"><b>Astrindo Nusantara Infrastruktur</b></li>
+
+                <br>
 
                 <li style="font-size:14px;padding-top:10px;">Committee Industry Association m.e.c</li>
                 <li style="font-size:14px;padding-top:5px;"><b>KADIN</b></li>
@@ -39,26 +41,39 @@
                 <a href=""><i class="fa fa-linkedin"></i></a>
             </div>
 
-          <form class="email-form">
+            <form class="email-form">
 
                 <!-- <div class="details">
                     <div class="col-satu"><i class="fa fa-briefcase"></i> &nbsp; PT CATUR SENTOSA ADIPRANA Tbk</div>
                 </div> -->
 
-                <div class="details">
-                    <i class="fa fa-phone"></i> &nbsp; &nbsp; +62 21 5668801
+                <div class="details" style="margin-top: 15px;">
+                    <i class="fa fa-phone"></i> &nbsp; &nbsp; +6221 5081 5252
+                    <br> <font style="padding-left: 32px;font-size:10px;">Astrindo</font>
+                    
+                    <br> <br> <font style="padding-left: 32px;">+6221 527 4484</font>
+                    <br> <font style="padding-left: 32px;font-size:10px;">Kadin</font><br>
                 </div>
 
-                <div class="details">
+                <div class="details" style="margin-top: 65px;">
                     <i class="fa fa-mobile"></i> &nbsp; &nbsp; &nbsp; +62 813 9999 0707
                 </div>
 
-                <div class="details">
+                <div class="details" style="margin-top: 5px;">
                     <i class="fa fa-envelope-o"></i> &nbsp; achmadwidjaja@me.com
+                    <br> <font style="padding-left: 28px;font-size:10px;">Astrindo</font>
+
+                    <br> <br> <font style="padding-left: 28px;">aw@kadin.id</font>
+                    <br> <font style="padding-left: 28px;font-size:10px;">Kadin</font><br>
                 </div>
 
-                <div class="details">
+                <div class="details" style="margin-top: 68px;">
                     <i class="fa fa-map-marker"></i> &nbsp; Jl. Daan Mogot Raya No. 234, Jakarta 11510
+                    <br> <font style="padding-left: 20px;font-size:10px;">Astrindo</font>
+
+                    <br> <br> <font style="padding-left: 20px;">Menara Kadin Indonesia Lt. 29</font>
+                    <br> <font style="padding-left: 20px;">Jl. H . Rasuna Said X-5 Kav. 2-3 Jakrta 12950</font>
+                    <br> <font style="padding-left: 20px;font-size:10px;">Kadin</font><br>
                 </div>
 
                 <!-- <button class="contact">send</button> -->

@@ -47,7 +47,7 @@ a
 }
 .card.active
 {
-    height:590px;
+    height:640px;
 }
 .banner
 {
@@ -222,7 +222,7 @@ button.contact:focus
 
 .email-form.active
 {
-    height: 310px;
+    height: 361px;
     z-index: 3;
     -webkit-transition: all 1s ease-in-out;
     -moz-transition:    all 1s ease-in-out;
@@ -288,17 +288,17 @@ button.contact:focus
 {
     width: 300px;
     /* text-transform: capitalize; */
-/*    background-color: #a4acbc;*/
+    /*    background-color: #a4acbc;*/
     color: #a4acbc;
     font-size: 14px;
     margin: 0 auto;
     font-family: inherit;
     /* border: 1px solid #dadee5; */
-/*    border: 1px solid black;*/
-    margin-top: 35px;
+    /*    border: 1px solid black;*/
+    /* margin-top: 35px; */
     height: 30px;
     display: block;
-        -webkit-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
     -moz-transition:    all 0.2s ease-in-out;
     -o-transition:      all 0.2s ease-in-out;
     -ms-transition:     all 0.2s ease-in-out;
