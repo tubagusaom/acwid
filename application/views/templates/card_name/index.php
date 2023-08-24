@@ -68,7 +68,8 @@
                 </div>
 
                 <div class="details" style="margin-top: 68px;">
-                    <i class="fa fa-map-marker"></i> &nbsp; Jl. Daan Mogot Raya No. 234, Jakarta 11510
+                    <i class="fa fa-map-marker"></i> &nbsp; Sopo Del Office Tower B. 21 Floor
+                    <br> <font style="padding-left: 20px;">Jl. Mega Kuningan Barat III Jaksel 12950</font>
                     <br> <font style="padding-left: 20px;font-size:10px;">Astrindo</font>
 
                     <br> <br> <font style="padding-left: 20px;">Menara Kadin Indonesia Lt. 29</font>

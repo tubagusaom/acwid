@@ -47,7 +47,7 @@ a
 }
 .card.active
 {
-    height:640px;
+    height:650px;
 }
 .banner
 {
@@ -222,7 +222,7 @@ button.contact:focus
 
 .email-form.active
 {
-    height: 361px;
+    height: 371px;
     z-index: 3;
     -webkit-transition: all 1s ease-in-out;
     -moz-transition:    all 1s ease-in-out;
