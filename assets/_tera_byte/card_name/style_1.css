@@ -157,7 +157,7 @@ button.contact
 button.contact:hover
 {
     cursor: pointer;
-    background-color:#C7D0E1;
+    background-color:#9a9a9a;
 }
 
 button.contact:focus
