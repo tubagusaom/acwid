@@ -73,7 +73,7 @@
                     <br> <font style="padding-left: 20px;font-size:10px;">Astrindo</font>
 
                     <br> <br> <font style="padding-left: 20px;">Menara Kadin Indonesia Lt. 29</font>
-                    <br> <font style="padding-left: 20px;">Jl. H . Rasuna Said X-5 Kav. 2-3 Jakrta 12950</font>
+                    <br> <font style="padding-left: 20px;">Jl. H . Rasuna Said X-5 Kav. 2-3 Jakarta 12950</font>
                     <br> <font style="padding-left: 20px;font-size:10px;">Kadin</font><br>
                 </div>
 
