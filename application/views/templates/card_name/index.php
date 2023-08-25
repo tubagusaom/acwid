@@ -48,6 +48,10 @@
                 </div> -->
 
                 <div class="details" style="margin-top: 15px;">
+                    <i class="fa fa-mobile"></i> &nbsp; &nbsp; &nbsp; +62 813 9999 0707
+                </div>
+
+                <div class="details" style="margin-top: 5px;">
                     <i class="fa fa-phone"></i> &nbsp; &nbsp; +6221 5081 5252
                     <br> <font style="padding-left: 32px;font-size:10px;">Astrindo</font>
                     
@@ -56,10 +60,6 @@
                 </div>
 
                 <div class="details" style="margin-top: 65px;">
-                    <i class="fa fa-mobile"></i> &nbsp; &nbsp; &nbsp; +62 813 9999 0707
-                </div>
-
-                <div class="details" style="margin-top: 5px;">
                     <i class="fa fa-envelope-o"></i> &nbsp; achmadwidjaja@me.com
                     <br> <font style="padding-left: 28px;font-size:10px;">Astrindo</font>
 
