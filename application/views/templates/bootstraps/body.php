@@ -210,7 +210,7 @@
                 } elseif ($ext_jenis == 'video') {
               ?>
 
-              <iframe class="img-fluid" src="<?=base_url()?>embed-video/<?=$port->nama_file?>"></iframe>
+              <!-- <iframe class="img-fluid" src="<?=base_url()?>embed-video/<?=$port->nama_file?>"></iframe> -->
 
               <!-- <video
                   controlsList="nodownload" oncontextmenu="return false;"
